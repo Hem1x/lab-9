@@ -75,7 +75,7 @@ class TestUI:
         response = requests.get("http://localhost:3000/")
         assert response.status_code == 200
         html = response.text
-        assert "<h1>" in not html
+        assert "<h1>" in html
         assert 'id="content"' in html
         assert 'id="test-button"' in html
     
@@ -84,3 +84,4 @@ class TestUI:
         assert response.status_code == 200
 
         assert "text/html" in response.headers.get("content-type", "")
+
